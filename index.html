@@ -9,146 +9,175 @@
 <style>
 
 :root{
+    --text:#1a1a1a;
+    --muted:#666;
     --accent:#1f4e79;
-    --text:#222;
-    --light:#666;
-    --bg:#fafafa;
-    --card:#ffffff;
-    --border:#e5e7eb;
+    --bg:#fbfbfb;
+    --border:#e6e6e6;
 }
 
+/* RESET */
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
-html{
-    scroll-behavior:smooth;
-}
-
 body{
+    font-family: "Georgia", "Times New Roman", serif;
     background:var(--bg);
     color:var(--text);
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
     line-height:1.7;
 }
 
-.container{
-    max-width:1000px;
+/* LAYOUT */
+.wrapper{
+    display:flex;
+    max-width:1200px;
     margin:auto;
-    padding:40px 25px;
+    padding:40px 20px;
+    gap:50px;
+}
+
+/* SIDEBAR (MIT STYLE) */
+aside{
+    width:220px;
+    position:sticky;
+    top:40px;
+    height:fit-content;
+}
+
+aside h1{
+    font-size:1.3rem;
+    margin-bottom:10px;
+}
+
+aside p{
+    color:var(--muted);
+    font-size:0.9rem;
+    margin-bottom:20px;
 }
 
 nav{
     display:flex;
-    gap:25px;
-    margin-bottom:60px;
-    font-weight:600;
+    flex-direction:column;
+    gap:10px;
 }
 
 nav a{
     text-decoration:none;
     color:var(--accent);
+    font-size:0.95rem;
 }
 
 nav a:hover{
-    opacity:0.7;
+    text-decoration:underline;
 }
 
+/* MAIN */
+main{
+    flex:1;
+    max-width:850px;
+}
+
+/* HEADER */
 header{
-    margin-bottom:70px;
+    margin-bottom:50px;
 }
 
-h1{
-    font-size:4rem;
-    line-height:1.1;
+header h2{
+    font-size:2.4rem;
+    margin-bottom:10px;
 }
 
 .subtitle{
-    margin-top:10px;
-    color:var(--light);
-    font-size:1.1rem;
+    color:var(--muted);
 }
 
-.interests{
-    margin-top:18px;
-    color:var(--accent);
-    font-weight:600;
-}
-
+/* SECTIONS */
 section{
-    margin-bottom:70px;
+    margin-bottom:60px;
 }
 
-h2{
-    margin-bottom:25px;
-    font-size:2rem;
-    border-bottom:2px solid var(--border);
-    padding-bottom:10px;
+section h3{
+    font-size:1.4rem;
+    border-bottom:1px solid var(--border);
+    padding-bottom:6px;
+    margin-bottom:20px;
 }
 
+/* NOTES */
 .notes-grid{
     display:grid;
-    gap:18px;
+    grid-template-columns:1fr;
+    gap:12px;
 }
 
-.note-card{
-    background:var(--card);
+.note{
+    padding:14px;
     border:1px solid var(--border);
-    border-radius:14px;
-    padding:18px;
-    transition:0.2s;
+    background:white;
 }
 
-.note-card:hover{
-    transform:translateY(-2px);
-}
-
-.note-card a{
-    text-decoration:none;
+.note a{
     color:var(--accent);
-    font-size:1.1rem;
-    font-weight:700;
+    font-weight:600;
+    text-decoration:none;
 }
 
-.note-version{
-    color:var(--light);
-    font-size:0.9rem;
-    margin-top:6px;
+.note a:hover{
+    text-decoration:underline;
 }
 
+.meta{
+    font-size:0.85rem;
+    color:var(--muted);
+    margin-top:4px;
+}
+
+/* PROJECTS */
 .project{
-    background:var(--card);
-    border-left:5px solid var(--accent);
-    padding:16px;
-    border-radius:10px;
-    margin-bottom:15px;
-}
-
-.about{
-    background:var(--card);
+    padding:12px;
+    border-left:3px solid var(--accent);
+    margin-bottom:12px;
+    background:white;
     border:1px solid var(--border);
-    border-radius:14px;
-    padding:20px;
 }
 
+/* ABOUT */
+.about{
+    background:white;
+    border:1px solid var(--border);
+    padding:16px;
+}
+
+/* FOOTER */
 footer{
-    margin-top:80px;
-    border-top:1px solid var(--border);
-    padding-top:20px;
-    color:var(--light);
+    margin-top:60px;
+    font-size:0.85rem;
+    color:var(--muted);
 }
 
-@media(max-width:700px){
+/* MOBILE */
+@media(max-width:900px){
 
-    h1{
-        font-size:2.6rem;
+    .wrapper{
+        flex-direction:column;
+    }
+
+    aside{
+        position:relative;
+        width:100%;
     }
 
     nav{
+        flex-direction:row;
         flex-wrap:wrap;
         gap:15px;
+    }
+
+    header h2{
+        font-size:1.9rem;
     }
 }
 
@@ -157,53 +186,56 @@ footer{
 
 <body>
 
-<div class="container">
+<div class="wrapper">
 
-<nav>
-<a href="#notes">Research Notes</a>
-<a href="#projects">Projects</a>
-<a href="#about">About</a>
-<a href="#contact">Contact</a>
-</nav>
+<!-- SIDEBAR -->
+<aside>
+    <h1>Ibrahim Furkan</h1>
+    <p>Theoretical Physics & Mathematics</p>
+
+    <nav>
+        <a href="#notes">Notes</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</aside>
+
+<!-- MAIN -->
+<main>
 
 <header>
-
-<h1>Ibrahim Furkan</h1>
-
-<div class="subtitle">
-Undergraduate Physics Student
-</div>
-
-<div class="interests">
-Lie Theory • Homological Algebra • Category Theory • Mathematical Physics
-</div>
-
+    <h2>Research & Notes</h2>
+    <div class="subtitle">
+        Lie Theory • Homological Algebra • Category Theory • Mathematical Physics
+    </div>
 </header>
 
 <section id="notes">
 
-<h2>Research Notes</h2>
+<h3>Research Notes</h3>
 
 <div class="notes-grid">
 
-<div class="note-card">
-<a href="#">Notes on Semisimple Lie Algebras</a>
-<div class="note-version">Version 0.1</div>
+<div class="note">
+<a href="notes/semisimple_lie_algebras.pdf" target="_blank">
+Semisimple Lie Algebras
+</a>
+<div class="meta">Version 0.1 · PDF</div>
 </div>
 
-<div class="note-card">
-<a href="#">Lie Algebra Cohomology: Preliminary Notes</a>
-<div class="note-version">Version 0.1</div>
+<div class="note">
+<a href="notes/lien_cohomology.pdf" target="_blank">
+Lie Algebra Cohomology
+</a>
+<div class="meta">Chevalley–Eilenberg Complex</div>
 </div>
 
-<div class="note-card">
-<a href="#">Hypercohomology of Chevalley–Eilenberg Complexes</a>
-<div class="note-version">Version 0.1</div>
-</div>
-
-<div class="note-card">
-<a href="#">Derived Categories Notes</a>
-<div class="note-version">Version 0.1</div>
+<div class="note">
+<a href="notes/hypercohomology.pdf" target="_blank">
+Hypercohomology Notes
+</a>
+<div class="meta">Derived functors & complexes</div>
 </div>
 
 </div>
@@ -212,14 +244,14 @@ Lie Theory • Homological Algebra • Category Theory • Mathematical Physics
 
 <section id="projects">
 
-<h2>Projects</h2>
+<h3>Projects</h3>
 
 <div class="project">
-Chevalley–Eilenberg Cohomology Program
+Chevalley–Eilenberg Cohomology Framework
 </div>
 
 <div class="project">
-Hypercohomology on Categories of Lie Algebras
+Hypercohomology on Lie Algebra Categories
 </div>
 
 <div class="project">
@@ -230,37 +262,30 @@ Mathematical Physics Notes Archive
 
 <section id="about">
 
-<h2>About</h2>
+<h3>About</h3>
 
 <div class="about">
-
-This website contains personal research notes,
-reading notes, expository articles, and ongoing
-projects in mathematics and theoretical physics.
-
-Current interests include Lie theory, category
-theory, homological algebra, cohomology theories,
-and mathematical aspects of physics.
-
+This site contains research notes in mathematics and theoretical physics,
+focusing on Lie theory, category theory, homological algebra, and quantum structures.
 </div>
 
 </section>
 
 <section id="contact">
 
-<h2>Contact</h2>
+<h3>Contact</h3>
 
-<p>
-Academic website under construction.
+<p style="color:#666;">
+Academic site under development.
 </p>
 
 </section>
 
 <footer>
-
 Last updated: June 2026
-
 </footer>
+
+</main>
 
 </div>
 
