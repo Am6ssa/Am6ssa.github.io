@@ -1,30 +1,268 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>Ibrahim Furkan</title>
+
+<style>
+
+:root{
+    --accent:#1f4e79;
+    --text:#222;
+    --light:#666;
+    --bg:#fafafa;
+    --card:#ffffff;
+    --border:#e5e7eb;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    line-height:1.7;
+}
+
+.container{
+    max-width:1000px;
+    margin:auto;
+    padding:40px 25px;
+}
+
+nav{
+    display:flex;
+    gap:25px;
+    margin-bottom:60px;
+    font-weight:600;
+}
+
+nav a{
+    text-decoration:none;
+    color:var(--accent);
+}
+
+nav a:hover{
+    opacity:0.7;
+}
+
+header{
+    margin-bottom:70px;
+}
+
+h1{
+    font-size:4rem;
+    line-height:1.1;
+}
+
+.subtitle{
+    margin-top:10px;
+    color:var(--light);
+    font-size:1.1rem;
+}
+
+.interests{
+    margin-top:18px;
+    color:var(--accent);
+    font-weight:600;
+}
+
+section{
+    margin-bottom:70px;
+}
+
+h2{
+    margin-bottom:25px;
+    font-size:2rem;
+    border-bottom:2px solid var(--border);
+    padding-bottom:10px;
+}
+
+.notes-grid{
+    display:grid;
+    gap:18px;
+}
+
+.note-card{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:18px;
+    transition:0.2s;
+}
+
+.note-card:hover{
+    transform:translateY(-2px);
+}
+
+.note-card a{
+    text-decoration:none;
+    color:var(--accent);
+    font-size:1.1rem;
+    font-weight:700;
+}
+
+.note-version{
+    color:var(--light);
+    font-size:0.9rem;
+    margin-top:6px;
+}
+
+.project{
+    background:var(--card);
+    border-left:5px solid var(--accent);
+    padding:16px;
+    border-radius:10px;
+    margin-bottom:15px;
+}
+
+.about{
+    background:var(--card);
+    border:1px solid var(--border);
+    border-radius:14px;
+    padding:20px;
+}
+
+footer{
+    margin-top:80px;
+    border-top:1px solid var(--border);
+    padding-top:20px;
+    color:var(--light);
+}
+
+@media(max-width:700px){
+
+    h1{
+        font-size:2.6rem;
+    }
+
+    nav{
+        flex-wrap:wrap;
+        gap:15px;
+    }
+}
+
+</style>
 </head>
 
 <body>
 
+<div class="container">
+
+<nav>
+<a href="#notes">Research Notes</a>
+<a href="#projects">Projects</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+</nav>
+
+<header>
+
 <h1>Ibrahim Furkan</h1>
 
-<p>Physics Undergraduate Student</p>
+<div class="subtitle">
+Undergraduate Physics Student
+</div>
 
-<p>
-Research interests:
-Lie Theory,
-Category Theory,
-Homological Algebra,
-Mathematical Physics.
-</p>
+<div class="interests">
+Lie Theory • Homological Algebra • Category Theory • Mathematical Physics
+</div>
+
+</header>
+
+<section id="notes">
 
 <h2>Research Notes</h2>
 
-<ul>
-<li>Semisimple Lie Algebras</li>
-<li>Hypercohomology Notes</li>
-<li>Derived Categories Notes</li>
-</ul>
+<div class="notes-grid">
+
+<div class="note-card">
+<a href="#">Notes on Semisimple Lie Algebras</a>
+<div class="note-version">Version 0.1</div>
+</div>
+
+<div class="note-card">
+<a href="#">Lie Algebra Cohomology: Preliminary Notes</a>
+<div class="note-version">Version 0.1</div>
+</div>
+
+<div class="note-card">
+<a href="#">Hypercohomology of Chevalley–Eilenberg Complexes</a>
+<div class="note-version">Version 0.1</div>
+</div>
+
+<div class="note-card">
+<a href="#">Derived Categories Notes</a>
+<div class="note-version">Version 0.1</div>
+</div>
+
+</div>
+
+</section>
+
+<section id="projects">
+
+<h2>Projects</h2>
+
+<div class="project">
+Chevalley–Eilenberg Cohomology Program
+</div>
+
+<div class="project">
+Hypercohomology on Categories of Lie Algebras
+</div>
+
+<div class="project">
+Mathematical Physics Notes Archive
+</div>
+
+</section>
+
+<section id="about">
+
+<h2>About</h2>
+
+<div class="about">
+
+This website contains personal research notes,
+reading notes, expository articles, and ongoing
+projects in mathematics and theoretical physics.
+
+Current interests include Lie theory, category
+theory, homological algebra, cohomology theories,
+and mathematical aspects of physics.
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2>Contact</h2>
+
+<p>
+Academic website under construction.
+</p>
+
+</section>
+
+<footer>
+
+Last updated: June 2026
+
+</footer>
+
+</div>
 
 </body>
 </html>
