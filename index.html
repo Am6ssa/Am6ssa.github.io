@@ -16,7 +16,6 @@
     --border:#e6e6e6;
 }
 
-/* RESET */
 *{
     margin:0;
     padding:0;
@@ -30,7 +29,6 @@ body{
     line-height:1.7;
 }
 
-/* LAYOUT */
 .wrapper{
     display:flex;
     max-width:1200px;
@@ -39,24 +37,14 @@ body{
     gap:50px;
 }
 
-/* SIDEBAR */
 aside{
     width:220px;
     position:sticky;
     top:40px;
-    height:fit-content;
 }
 
-aside h1{
-    font-size:1.3rem;
-    margin-bottom:10px;
-}
-
-aside p{
-    color:var(--muted);
-    font-size:0.9rem;
-    margin-bottom:20px;
-}
+aside h1{font-size:1.3rem;}
+aside p{color:var(--muted);}
 
 nav{
     display:flex;
@@ -67,43 +55,19 @@ nav{
 nav a{
     text-decoration:none;
     color:var(--accent);
-    font-size:0.95rem;
 }
 
-nav a:hover{
-    text-decoration:underline;
-}
-
-/* MAIN */
 main{
     flex:1;
-    max-width:850px;
-}
-
-/* HEADER */
-header{
-    margin-bottom:50px;
 }
 
 header h2{
-    font-size:2.4rem;
-    margin-bottom:10px;
+    font-size:2.2rem;
 }
 
 .subtitle{
     color:var(--muted);
-}
-
-/* SECTIONS */
-section{
-    margin-bottom:60px;
-}
-
-section h3{
-    font-size:1.4rem;
-    border-bottom:1px solid var(--border);
-    padding-bottom:6px;
-    margin-bottom:20px;
+    margin-bottom:30px;
 }
 
 /* NOTES */
@@ -125,10 +89,6 @@ section h3{
     text-decoration:none;
 }
 
-.note a:hover{
-    text-decoration:underline;
-}
-
 .meta{
     font-size:0.85rem;
     color:var(--muted);
@@ -141,26 +101,10 @@ section h3{
     border-left:3px solid var(--accent);
     margin-bottom:12px;
     background:white;
-    border:1px solid var(--border);
-}
-
-/* ABOUT */
-.about{
-    background:white;
-    border:1px solid var(--border);
-    padding:16px;
-}
-
-/* FOOTER */
-footer{
-    margin-top:60px;
-    font-size:0.85rem;
-    color:var(--muted);
 }
 
 /* MOBILE */
 @media(max-width:900px){
-
     .wrapper{
         flex-direction:column;
     }
@@ -168,16 +112,6 @@ footer{
     aside{
         position:relative;
         width:100%;
-    }
-
-    nav{
-        flex-direction:row;
-        flex-wrap:wrap;
-        gap:15px;
-    }
-
-    header h2{
-        font-size:1.9rem;
     }
 }
 
@@ -188,7 +122,6 @@ footer{
 
 <div class="wrapper">
 
-<!-- SIDEBAR -->
 <aside>
     <h1>Ibrahim Furkan</h1>
     <p>Theoretical Physics & Mathematics</p>
@@ -201,7 +134,6 @@ footer{
     </nav>
 </aside>
 
-<!-- MAIN -->
 <main>
 
 <header>
@@ -210,64 +142,20 @@ footer{
         Lie Theory • Homological Algebra • Category Theory • Mathematical Physics
     </div>
 </header>
-    
-<section id="notes">
-  <h3>Research Notes</h3>
-  <div class="notes-grid" id="notes-container"></div>
-</section>
-<section id="notes">
 
+<!-- ✅ ONLY ONE NOTES SECTION -->
+<section id="notes">
 <h3>Research Notes</h3>
-
-<div class="notes-grid">
-
-<div class="note">
-<a href="notes_lie.pdf" target="_blank">
-Semisimple Lie Algebras
-</a>
-<div class="meta">Version 0.1 · Lie Theory</div>
-</div>
-
-<div class="note">
-<a href="notes_cohomology.pdf" target="_blank">
-Lie Algebra Cohomology
-</a>
-<div class="meta">Chevalley–Eilenberg Complex</div>
-</div>
-
-<div class="note">
-<a href="notes_maxwell.pdf" target="_blank">
-Maxwell Notes
-</a>
-<div class="meta"></div>
-</div>
-
-<div class="note">
-<a href="notes_tqft.pdf" target="_blank">
-Topological Quantum Field Theory
-</a>
-<div class="meta">TQFT Basics</div>
-</div>
-
-</div>
-
+<div class="notes-grid" id="notes-container"></div>
 </section>
 
 <section id="projects">
 
 <h3>Projects</h3>
 
-<div class="project">
-Chevalley–Eilenberg Cohomology Framework
-</div>
-
-<div class="project">
-Hypercohomology on Lie Algebra Categories
-</div>
-
-<div class="project">
-Mathematical Physics Notes Archive
-</div>
+<div class="project">Chevalley–Eilenberg Cohomology Framework</div>
+<div class="project">Hypercohomology on Lie Algebra Categories</div>
+<div class="project">Mathematical Physics Notes Archive</div>
 
 </section>
 
@@ -276,8 +164,7 @@ Mathematical Physics Notes Archive
 <h3>About</h3>
 
 <div class="about">
-This site contains research notes in mathematics and theoretical physics,
-focusing on Lie theory, category theory, homological algebra, and quantum structures.
+This site contains research notes in mathematics and theoretical physics.
 </div>
 
 </section>
@@ -286,9 +173,7 @@ focusing on Lie theory, category theory, homological algebra, and quantum struct
 
 <h3>Contact</h3>
 
-<p style="color:#666;">
-Academic site under development.
-</p>
+<p style="color:#666;">Academic site under development.</p>
 
 </section>
 
@@ -299,6 +184,30 @@ Last updated: June 2026
 </main>
 
 </div>
+
+<!-- 🚀 JS (IMPORTANT) -->
+<script>
+const notes = [
+  { title:"Semisimple Lie Algebras", file:"notes_lie.pdf", tag:"Lie Theory" },
+  { title:"Lie Algebra Cohomology", file:"notes_cohomology.pdf", tag:"Homological Algebra" },
+  { title:"Maxwell Notes", file:"notes_maxwell.pdf", tag:"Field Theory" },
+  { title:"Topological Quantum Field Theory", file:"notes_tqft.pdf", tag:"TQFT" }
+];
+
+const container = document.getElementById("notes-container");
+
+notes.forEach(n => {
+  const div = document.createElement("div");
+  div.className = "note";
+
+  div.innerHTML = `
+    <a href="${n.file}" target="_blank">${n.title}</a>
+    <div class="meta">${n.tag}</div>
+  `;
+
+  container.appendChild(div);
+});
+</script>
 
 </body>
 </html>
